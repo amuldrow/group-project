@@ -1,0 +1,33 @@
+#map{
+    height:400px;
+    width: 600px;
+}
+
+#selectState{
+    display: flex;
+    flex-direction: column;
+}
+
+#stateList{
+    width: 25%;
+    margin: 10px;
+}
+
+#subBtn{
+    width: 25%;
+    margin: 10px;
+}
+ 
+#parkList{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border-top: 3px solid;
+    padding: 10px;
+}
+
+.parks{
+    padding: 5px;
+    margin: 5px;
+    
+}
