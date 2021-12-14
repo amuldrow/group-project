@@ -1,0 +1,58 @@
+:root{
+    --primary:rgb(14, 77, 56);
+    --secondary: white;
+    --tertiary: black;
+}
+
+.hero {
+    padding: .5% 5%;
+    background-color: var(--secondary);
+}
+
+.apptitle {
+    text-align: center;
+    font-size: 3rem;
+    ;
+
+}
+
+body {
+    background-color: var(--primary)
+}
+
+#map{
+    height:400px;
+    width: 600px;
+}
+
+#selectState{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
+
+#stateList{
+    width: 25%;
+    margin: 10px;
+}
+
+#subBtn{
+    width: 25%;
+    margin: 10px;
+}
+ 
+#parkList{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border-top: 3px solid;
+    padding: 10px;
+}
+
+.parks{
+    padding: 5px;
+    margin: 5px;
+    
+}
