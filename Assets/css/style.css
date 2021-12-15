@@ -1,8 +1,10 @@
-:root{
-    --primary:rgb(14, 77, 56);
-    --secondary: white;
-    --tertiary: black;
-}
+$foundation-palette: (
+  primary: #1779ba,
+  secondary: #767676,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
 
 .hero {
     padding: 20% 20%;
@@ -13,9 +15,16 @@
 .apptitle {
     text-align: right;
     font-size: 4rem;
+    color: goldenrod;
 
 }
-
+p {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    color: goldenrod;
+    margin-right: 30px;
+}
 body {
     background-color: var(--primary)
 }
@@ -23,7 +32,6 @@ body {
 #map{
     height:400px;
     width: 600px;
-    float: right;
 }
 
 #selectState{
@@ -42,6 +50,7 @@ body {
 #subBtn{
     width: 25%;
     margin: 10px;
+    box-shadow: ;
 }
  
 #parkList{

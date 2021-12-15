@@ -18,8 +18,10 @@
     <body class="flex-column min-100-vh">
         <header class= "hero">
             <h1 class="apptitle"><i class="fas fa-tree"></i> Parks & Brews <i class="fas fa-beer"></i> </h1>
+            <p>Search for a state and get information on National parks in that state as well as the closest breweries to that National park.</p>
         </header>
     <div >
+      <div class="col-12 col-md-4">
         <form id="selectState">
             <Label for="stateList">Select a State: </Label>
             <select id="stateList">
@@ -79,11 +81,13 @@
             <input id="subBtn" type="submit" value="submit">			
         </form>
     </div>
+    </div>
 
     <div id="parkList"></div>
 
-    <div id="map"></div>
-
+    <div class="col-12 col-md-8">
+    <div id="map" class="float-right"></div>
+    </div>
 
     <script src="./Assets/js/script.js"></script>   
     <script src="js/vendor/jquery.js"></script>
