@@ -31,6 +31,7 @@ body {
     flex-direction: column;
     font-size: 2rem;
     font-weight: bold;
+    color: goldenrod;
     
 }
 
@@ -58,11 +59,23 @@ body {
 }
 
 .button{
-    background-color: forestgreen;
+    background-color: goldenrod;
+}
+
+#parkInfo{
+    display: none;
+    width: 50%;
+    padding: 5px;
+    color: goldenrod;
+    border: 3px solid goldenrod;
+}
+
+#parkInfo a{
+    color: goldenrod;
 }
 
 .card-divider{
-    background-color: rgb(14, 77, 56);
+    background-color: var(--primary);
     color: white;
 }
 
