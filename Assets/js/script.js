@@ -3,6 +3,7 @@
 var formEl = document.getElementById("selectState")
 var select = document.getElementById("stateList")
 var buttonHandlerEl = document.getElementById("parkList")
+var parkInfoEl = document.getElementById("parkInfo")
 mapboxgl.accessToken="pk.eyJ1IjoibWlsbGVydGltZTc4IiwiYSI6ImNreDI0dzdmODBwbG8ycnBha3dxaHB1aHEifQ.xNbviSI4FzhsW6yUBpXpDQ"
 
 //Api call to get national park information
@@ -25,8 +26,8 @@ var displayParks = function(data){
             park.className = "parks button";
             park.textContent = data.data[i].fullName;
             //sets value to that parks lat and long seperated by a comma
-            park.value = data.data[i].latitude +","+ data.data[i].longitude;
-            console.log(park.value);
+            park.value = data.data[i].latitude +","+ data.data[i].longitude+","+data.data[i].parkCode;
+            // console.log(park.value);
 
             //adds buttons to button div
             buttonHandlerEl.appendChild(park);
@@ -80,6 +81,45 @@ var newMap = function(long, lati){
     map.addControl(nav, "bottom-right");
 };
 
+var codeFetch = function(code){
+    var NPS=fetch("https://developer.nps.gov/api/v1/parks?parkCode=" +code+"&api_key=SwqWC3QHquTaPpof75xXkWepaUKDKmblOtJhEjha")
+        .then(response => response.json())
+        .then(data => parkInfo(data)); 
+}
+
+var parkInfo=function(data){
+    console.log(data);
+    parkInfoEl.style.display="block";
+    parkInfoEl.innerHTML="";
+
+    var parkName = document.createElement("h2");
+    parkName.className ="parkName";
+    parkName.textContent= data.data[0].fullName;
+
+    var parkImage = document.createElement("img");
+    parkImage.className="parkImage";
+    parkImage.src = data.data[0].images[0].url;
+    parkImage.setAttribute("style", "width:100%; height:200px");
+
+    var description =  document.createElement("p")
+    description.className = "parkDescription";
+    description.innerHTML= data.data[0].description + "<br><br>" + data.data[0].directionsInfo;
+
+    var weather = document.createElement("p");
+    weather.className = "parkWeather";
+    weather.textContent = data.data[0].weatherInfo;
+
+    var url = document.createElement("a");
+    var linkText=document.createTextNode("Click Here to Visit Park Website");
+    url.appendChild(linkText);
+    url.className= "parkUrl";
+    url.href=data.data[0].url;
+    url.target="_blank";
+    url.rel="noopener noreferrer";
+
+
+    parkInfoEl.append(parkName, parkImage, description, weather, url);
+}
 
 //when form is submitted...
 formEl.addEventListener("submit", function(event){
@@ -95,9 +135,11 @@ buttonHandlerEl.addEventListener("click", function(event){
     if(event.target.type === "button"){
         //...splits the lat and lng into an array and sends values to the map function
         var latlng = event.target.value.split(",");
-        console.log(latlng);
+        // console.log(latlng);
         var lat=latlng[0];
         var lng = latlng[1];
+        var code = latlng[2];
         newMap(lng, lat);
+        codeFetch(code);
     }
 })
