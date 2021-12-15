@@ -31,3 +31,18 @@
     margin: 5px;
     
 }
+
+.button{
+    background-color: forestgreen;
+}
+
+.card-divider{
+    background-color: rgb(14, 77, 56);
+    color: white;
+}
+
+.card-section{
+    padding: 1px 5px 1px 5px;
+    background-color: goldenrod;
+
+}
