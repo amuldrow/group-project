@@ -5,14 +5,14 @@
 }
 
 .hero {
-    padding: .5% 5%;
-    background-color: var(--secondary);
-    background-image:url('/Assets/images/Beer-in-a-forest-1200x900.jpg');
+    padding: 20% 20%;
+    background-image:url('../images/beer-forest-waterfall-1022x600.jpg');
+    background-size:cover;
 }
 
 .apptitle {
-    text-align: center;
-    font-size: 3rem;
+    text-align: right;
+    font-size: 4rem;
     ;
 
 }
