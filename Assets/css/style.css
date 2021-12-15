@@ -1,0 +1,95 @@
+$foundation-palette: (
+  primary: #1779ba,
+  secondary: #767676,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
+
+.hero {
+    padding: 20% 20%;
+    background-image:url('../images/beer-forest-waterfall-1022x600.jpg');
+    background-size:cover;
+}
+
+.apptitle {
+    text-align: right;
+    font-size: 4rem;
+    color: goldenrod;
+
+}
+p {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    color: goldenrod;
+    margin-right: 30px;
+}
+body {
+    background-color: var(--primary)
+}
+
+#map{
+    height:400px;
+    width: 600px;
+}
+
+#selectState{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    font-weight: bold;
+    color: goldenrod;
+    
+}
+
+#stateList{
+    width: 25%;
+    margin: 10px;
+}
+
+#subBtn{
+    width: 25%;
+    margin: 10px;
+    box-shadow: ;
+}
+ 
+#parkList{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border-top: 3px solid;
+    padding: 10px;
+}
+
+.parks{
+    padding: 5px;
+    margin: 5px;
+}
+
+.button{
+    background-color: goldenrod;
+}
+
+#parkInfo{
+    display: none;
+    width: 50%;
+    padding: 5px;
+    color: goldenrod;
+    border: 3px solid goldenrod;
+}
+
+#parkInfo a{
+    color: goldenrod;
+}
+
+.card-divider{
+    background-color: var(--primary);
+    color: white;
+}
+
+.card-section{
+    padding: 1px 5px 1px 5px;
+    background-color: goldenrod;
+
+}
