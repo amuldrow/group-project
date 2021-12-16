@@ -4,6 +4,7 @@ var formEl = document.getElementById("selectState")
 var select = document.getElementById("stateList")
 var buttonHandlerEl = document.getElementById("parkList")
 var parkInfoEl = document.getElementById("parkInfo")
+var mapEl = document.getElementById("map")
 mapboxgl.accessToken="pk.eyJ1IjoibWlsbGVydGltZTc4IiwiYSI6ImNreDI0dzdmODBwbG8ycnBha3dxaHB1aHEifQ.xNbviSI4FzhsW6yUBpXpDQ"
 
 //Api call to get national park information
@@ -38,6 +39,7 @@ var displayParks = function(data){
 var newMap = function(long, lati){
     var lng = long
     var lat = lati
+    mapEl.style.display="block";
 
     //creates a new map centered on lat and lng provided
     var map = new mapboxgl.Map({
@@ -99,7 +101,7 @@ var parkInfo=function(data){
     var parkImage = document.createElement("img");
     parkImage.className="parkImage";
     parkImage.src = data.data[0].images[0].url;
-    parkImage.setAttribute("style", "width:100%; height:200px");
+    parkImage.setAttribute("style", "width:100%; height:17vw");
 
     var description =  document.createElement("p")
     description.className = "parkDescription";
