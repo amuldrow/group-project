@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 :root {
@@ -6,33 +7,68 @@
     --tertiary: white;
     
 }
+=======
+/* $foundation-palette: (
+  primary: #1779ba,
+  secondary: #767676,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+); */
+>>>>>>> 780a03d3fa3d80368928515b5e0d617b76abf01b
 
+header{
+    box-sizing: border-box;
+    height: 35vh;
+}
 .hero {
-    padding: 20% 20%;
-    background-image:url('../images/beer-forest-waterfall-1022x600.jpg');
+    /* padding: 20% 20%; */
+    background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/beer-forest-waterfall-1022x600.jpg');
     background-size:cover;
+    height: 35vw
+    
 }
 
 .apptitle {
     text-align: right;
     font-size: 4rem;
     color: goldenrod;
+    margin-right: 30px;
 
 }
-p {
+.subtitle {
     font-size: 20px;
     font-weight: bold;
     text-align: right;
+<<<<<<< HEAD
     color: goldenrod;
     padding-left: 22px;
 }
 body {
     background-color: var(--secondary)
+=======
+    color:goldenrod ;
+    margin-right: 30px;
+    
+    
+}
+body {
+    background-color: rgb(17, 92, 17); 
+>>>>>>> 780a03d3fa3d80368928515b5e0d617b76abf01b
 }
 
+/* #container{
+    display: flex;
+    margin: 10px;
+
+} */
 #map{
-    height:400px;
-    width: 600px;
+    height: 500px;
+    /* width: 50%; */
+    /* margin-left:2%; */
+    border-radius: 10px;
+    border: 3px solid goldenrod;
+    display: none;
 }
 
 #selectState{
@@ -41,56 +77,85 @@ body {
     font-size: 2rem;
     font-weight: bold;
     color: goldenrod;
-    
-}
-
-#stateList{
-    width: 25%;
     margin: 10px;
 }
 
-#subBtn{
-    width: 25%;
-    margin: 10px;
-    box-shadow: ;
+#selectState label{
+    font-size: 2rem;
+    color:goldenrod;
 }
  
+#recentSearches{
+    color: goldenrod;
+    font-size: 2rem;
+    margin-top: 10px;
+    
+}
 #parkList{
     display: flex;
     flex-direction: column;
-    width: 25%;
-    border-top: 3px solid;
+    border-top: 3px solid goldenrod;
     padding: 10px;
 }
 
 .parks{
     padding: 5px;
-    margin: 5px;
+    /* margin: 5px; */
 }
 
 .button{
     background-color: goldenrod;
+    color:rgb(17, 92, 17);
 }
 
 #parkInfo{
     display: none;
-    width: 50%;
+    /* width: 45%; */
     padding: 5px;
     color: goldenrod;
     border: 3px solid goldenrod;
+    border-radius: 10px;
 }
 
 #parkInfo a{
     color: goldenrod;
 }
 
+.brewName{
+    font-size: large;
+}
+.parkName{
+    border-bottom: 2px solid goldenrod;
+    text-align: center;
+    padding-bottom: .5rem;
+    font-size: 3rem;
+}
+
+.parkDescription{
+    text-align: left;
+    margin: 5px 5px 0 5px;
+}
+
+.parkWeather{
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .card-divider{
-    background-color: var(--primary);
-    color: white;
+    background-color: rgb(17, 92, 17);
+    color: goldenrod;
 }
 
 .card-section{
     padding: 1px 5px 1px 5px;
     background-color: goldenrod;
 
+}
+
+#recentBtns{
+    border: 3px goldenrod solid;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
 }

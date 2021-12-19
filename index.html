@@ -10,10 +10,16 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./Assets/css/style.css">
-    <link rel="stylesheet" href="css/foundation.css" />
-    <script src="https://kit.fontawesome.com/a8e11a44fc.js" crossorigin="anonymous"></script>
   </head>
+<<<<<<< HEAD
   <body>
 
     <header class= "hero">
@@ -24,9 +30,20 @@
     <div class="grid-x grid-padding-x">
       <div class="large-6 medium-6 cell">
         <div class="primary">
+=======
+  <body class="flex-column min-100-vh">
+    
+    <header class= "hero">
+      <h1 class="apptitle"><i class="fas fa-tree"></i> Parks & Brews <i class="fas fa-beer"></i> </h1>
+      <p class="subtitle">Search for a state and get information on National parks in that state as well as the closest breweries to that National park.</p>
+    </header>
+
+    <div class="grid-x grid-margin-x margin-bottom-2">
+      <div class="cell large-5 medium-6">
+>>>>>>> 780a03d3fa3d80368928515b5e0d617b76abf01b
         <form id="selectState">
-            <Label for="stateList">Select a State: </Label>
-            <select id="stateList">
+          <Label for="stateList">Select a State: </Label>
+          <select id="stateList">
                 <option></option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -79,10 +96,17 @@
                 <option value="WV">West Virginia</option>
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
-            </select>	
-            <input id="subBtn" type="submit" value="submit">			
+          </select>	
+          <input id="subBtn" type="submit" value="submit">			
         </form>
+        <div id="parkList"></div>
+      </div>
+      <div id="recentSearches" class="cell large-7 medium-6">
+        <p>Recent Searches:</p>
+        <div id="recentBtns" class="grid-x grid-margin-x"></div>
+      </div>
     </div>
+<<<<<<< HEAD
     </div>
     </div>
   </div>
@@ -104,5 +128,13 @@
     <script src="./Assets/js/script.js"></script>   
     </script>
 
+=======
+
+    <div class="grid-x grid-margin-x grid-padding-x">     
+      <div id="parkInfo" class="cell large-5 medium-12"></div>
+      <div id="map" class="cell large-7 medium-12"></div>
+    </div>
+    <script src="./Assets/js/script.js"></script>   
+>>>>>>> 780a03d3fa3d80368928515b5e0d617b76abf01b
   </body>
 </html>

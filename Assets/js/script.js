@@ -4,8 +4,35 @@ var formEl = document.getElementById("selectState")
 var select = document.getElementById("stateList")
 var buttonHandlerEl = document.getElementById("parkList")
 var parkInfoEl = document.getElementById("parkInfo")
+var mapEl = document.getElementById("map")
+var savedParks = JSON.parse(localStorage.getItem("savedParks")) || [];
+var recentBtns= document.getElementById("recentBtns");
 mapboxgl.accessToken="pk.eyJ1IjoibWlsbGVydGltZTc4IiwiYSI6ImNreDI0dzdmODBwbG8ycnBha3dxaHB1aHEifQ.xNbviSI4FzhsW6yUBpXpDQ"
 
+var loadSavedParks= function(){
+    recentBtns.innerHTML="";
+    for(var i=0; i<savedParks.length; i++){
+        var btnDiv=document.createElement("div");
+        btnDiv.classList.add("grid-x", "cell", "medium-12", "large-6")
+
+        var parkBtn = document.createElement("button");
+        parkBtn.classList.add("parks", "button", "cell", "small-10");
+        parkBtn.type="button";
+        parkBtn.textContent=savedParks[i].name;
+        parkBtn.value=savedParks[i].value;
+
+        var deleteBtn = document.createElement("button");
+        deleteBtn.innerHTML= "<i class='far fa-trash-alt'></i>";
+        deleteBtn.classList.add("button", "alert", "cell", "small-2")
+        deleteBtn.value="delete";
+        
+        
+
+        btnDiv.append(parkBtn,deleteBtn);
+
+        recentBtns.appendChild(btnDiv);
+    }
+}
 //Api call to get national park information
 var npsFetch = function(state){
     var NPS=fetch("https://developer.nps.gov/api/v1/parks?stateCode=" +state+"&api_key=SwqWC3QHquTaPpof75xXkWepaUKDKmblOtJhEjha")
@@ -38,6 +65,7 @@ var displayParks = function(data){
 var newMap = function(long, lati){
     var lng = long
     var lat = lati
+    mapEl.style.display="block";
 
     //creates a new map centered on lat and lng provided
     var map = new mapboxgl.Map({
@@ -99,11 +127,11 @@ var parkInfo=function(data){
     var parkImage = document.createElement("img");
     parkImage.className="parkImage";
     parkImage.src = data.data[0].images[0].url;
-    parkImage.setAttribute("style", "width:100%; height:200px");
+    parkImage.setAttribute("style", "width:100%; height:17vw");
 
     var description =  document.createElement("p")
     description.className = "parkDescription";
-    description.innerHTML= data.data[0].description + "<br><br>" + data.data[0].directionsInfo;
+    description.innerHTML= data.data[0].description + "<br><br>" + data.data[0].directionsInfo+"<br><br>";
 
     var weather = document.createElement("p");
     weather.className = "parkWeather";
@@ -141,5 +169,43 @@ buttonHandlerEl.addEventListener("click", function(event){
         var code = latlng[2];
         newMap(lng, lat);
         codeFetch(code);
+
+        var parkname=event.target.textContent;
+        var parkvalue=event.target.value;
+        var parks={
+            name: parkname,
+            value: parkvalue,
+        };
+
+        parkExists=savedParks.some(obj=> obj.name === parks.name);
+
+        if(!parkExists){
+            savedParks.push(parks);
+            localStorage.setItem("savedParks", JSON.stringify(savedParks));
+            console.log(savedParks);
+        };
+        
+        
+        loadSavedParks();
     }
 })
+
+recentBtns.addEventListener("click", function(event){
+    if(event.target.type === "button"){
+        //...splits the lat and lng into an array and sends values to the map function
+        var latlng = event.target.value.split(",");
+        // console.log(latlng);
+        var lat=latlng[0];
+        var lng = latlng[1];
+        var code = latlng[2];
+        newMap(lng, lat);
+        codeFetch(code);
+    };
+
+     if(event.target.value ==="delete"){
+        this.removeChild(event.target.parentNode);
+    };
+});
+
+
+loadSavedParks();
