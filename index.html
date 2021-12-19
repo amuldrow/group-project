@@ -15,13 +15,15 @@
     <script src="https://kit.fontawesome.com/a8e11a44fc.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <body class="flex-column min-100-vh">
-        <header class= "hero">
+
+    <header class= "hero">
             <h1 class="apptitle"><i class="fas fa-tree"></i> Parks & Brews <i class="fas fa-beer"></i> </h1>
             <p>Search for a state and get information on National parks in that state as well as the closest breweries to that National park.</p>
         </header>
-    <div >
-      <div class="col-12 col-md-4">
+        
+    <div class="grid-x grid-padding-x">
+      <div class="large-6 medium-6 cell">
+        <div class="primary">
         <form id="selectState">
             <Label for="stateList">Select a State: </Label>
             <select id="stateList">
@@ -82,28 +84,24 @@
         </form>
     </div>
     </div>
+    </div>
+  </div>
 
     
     <div id="parkList"></div>
-<<<<<<< HEAD
 
-    <div class="col-12 col-md-8">
-    <div id="map" class="float-right"></div>
-    </div>
-=======
-  
+    <div class="grid-x grid-padding-x">
+      <div class="large-6 medium-6 cell">
+        <div class="primary">
     <div id="map"></div>
-
+    </div>
+    </div>
+    </div>
+  
     <div id="parkInfo"></div>
 
->>>>>>> 99368e5d01a2b5f29ae723c0ece590e8147dcefe
 
     <script src="./Assets/js/script.js"></script>   
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.min.js"></script>
-    <script>
-      $(document).foundation();
     </script>
 
   </body>

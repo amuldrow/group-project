@@ -1,10 +1,11 @@
-$foundation-palette: (
-  primary: #1779ba,
-  secondary: #767676,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #cc4b37,
-);
+
+
+:root {
+    --primary: goldenrod;
+    --secondary: rgb(40, 105, 54);
+    --tertiary: white;
+    
+}
 
 .hero {
     padding: 20% 20%;
@@ -23,10 +24,10 @@ p {
     font-weight: bold;
     text-align: right;
     color: goldenrod;
-    margin-right: 30px;
+    padding-left: 22px;
 }
 body {
-    background-color: var(--primary)
+    background-color: var(--secondary)
 }
 
 #map{
