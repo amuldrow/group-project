@@ -8,6 +8,7 @@ The Parks & Brews application conveniently connects National Park lovers to the 
 ![image](https://user-images.githubusercontent.com/92446866/146692825-4096992c-070e-40ee-ae5b-95a92910938c.png)
 
 ### This is what the site looks like once a state is selcted 
+![image](https://user-images.githubusercontent.com/92446866/146692839-559b8124-2b37-4bfc-b12a-f7f60c798597.png)
 
 
 ### This is the link to the deployed application :
