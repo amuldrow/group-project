@@ -1,11 +1,3 @@
-/* $foundation-palette: (
-  primary: #1779ba,
-  secondary: #767676,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #cc4b37,
-); */
-
 header{
     box-sizing: border-box;
     height: 35vh;
@@ -87,6 +79,12 @@ body {
 .button{
     background-color: goldenrod;
     color:rgb(17, 92, 17);
+}
+
+.subBtn{
+    background-color: goldenrod;
+    box-shadow: white;
+    color: rgb(17, 92, 17);
 }
 
 #parkInfo{
