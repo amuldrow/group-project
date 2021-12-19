@@ -13,4 +13,4 @@ The Parks & Brews application conveniently connects National Park lovers to the 
 
 
 ### This is the link to the deployed application :
-### This is the link to the GitHub repository : 
+### This is the link to the GitHub repository : https://github.com/amuldrow/group-project.git
